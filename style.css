@@ -1,0 +1,23 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+}
+
+#container{
+    width: 1000px;
+    height: 550px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(bgImg.jpeg);
+    margin: 20px top;
+}
+
+#calculator{
+    width: 320px;
+    height: 520px;
+    margin: 0px auto;
+    top: 20px;
+    position: relative;
+    background-color: #eaedef;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
