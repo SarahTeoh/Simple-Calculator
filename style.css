@@ -21,3 +21,75 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
+
+#result{
+    height: 128px;
+    text-align: right;
+}
+
+#history{
+    height: 26px;
+    padding-top: 20px;
+    margin: 0 20px;
+    font-size: 15px;
+    color: #919191;
+}
+
+#output{
+    height: 68px;
+    margin: 10px 20px;
+    font-size: 30px;
+}
+
+.operator, .number, .empty{
+    background-color: #e2e1e2;
+    border-radius: 50%;
+    border-width: 0;
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    float: left;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.number, .empty{
+    background-color: #eaedef;
+}
+
+.number, .operator{
+    cursor: pointer;
+}
+
+.number:active, .operator:active{
+    font-size: 13px;
+}
+
+.number:focus, .operator:focus, .operator:empty{
+    outline: 0;
+}
+
+button:nth-child(4n){
+    font-size: 20px;
+}
+
+button:nth-child(4){
+    font-size: 20px;
+    background-color: #20b2aa;
+}
+
+button:nth-child(8){
+    background-color: #ffa500;
+}
+
+button:nth-child(12){
+    background-color: #f08080;
+}
+
+button:nth-child(16){
+    background-color: #7d93e0;
+}   
+
+button:nth-child(20){
+	background-color: #9477af;
+}
