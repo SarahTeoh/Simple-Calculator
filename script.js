@@ -60,8 +60,10 @@ for (var i = 0; i < operator.length; i++){
 var number = document.getElementsByClassName("number");
 for (var i = 0; i < number.length; i++){
     number[i].addEventListener('click', function(){
-        var output = getOutput();
-        output += this.id;
-        printOutput(output);
+        var output = reverserFormattedNumber(getOutput());
+        if (output!=NaN){
+            output += this.id;
+            printOutput(output);
+        }
     });
 };
