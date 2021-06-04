@@ -1,23 +1,3 @@
-function add(){
-    var sum = 0;
-
-    for (var i=0; i < arguments.length; i++){
-        sum += arguments[i];
-    }
-
-    return sum;
-}
-
-function multiply(){
-    var multiplied = arguments[0];
-
-    for (var i=1; i < arguments.length; i++){
-        multiplied *= arguments[i];
-    }
-
-    return multiplied;
-}
-
 function printOutput(num){
     if (num==""){
         document.getElementById("output-value").innerText=num;
@@ -40,6 +20,9 @@ function getHistory(){
 }
 
 function getFormattedNumber(num){
+    if (num=="-"){
+        return "";
+    }
     // Format the number with commas as thousands separators
     return Number(num).toLocaleString("en");
 }
@@ -47,13 +30,42 @@ function getFormattedNumber(num){
 function reverserFormattedNumber(stringNum){
     // Reverse numbers from string to numbers to perform addition and etc
     // Search and replace all commas using global modifier(g)
+    if (stringNum=="-"){
+        return "";
+    }
     return Number(stringNum.replace(/,/g, ''));
 }
 
 var operator = document.getElementsByClassName("operator");
 for (var i = 0; i < operator.length; i++){
     operator[i].addEventListener('click', function(){
-        
+        if (this.id == "clear"){
+            printOutput('');
+            printHistory('');
+        }
+        else if (this.id == "backspace"){
+            var output = getOutput().toString();
+            output = output.slice(0, -1);
+            printOutput(reverserFormattedNumber(output));
+        }
+        else{
+            var output = getOutput();
+            var history = getHistory();
+            if (output!=""){
+                output = reverserFormattedNumber(output);
+                history += output;
+                if (this.id=="="){
+                    var result = eval(history);
+                    printOutput(result);
+                    printHistory("");
+                }
+                else{
+                    history = history + this.id;
+                    printHistory(history);
+                    printOutput("");
+                }
+            };
+        };
     });
 };
 
@@ -67,3 +79,4 @@ for (var i = 0; i < number.length; i++){
         }
     });
 };
+
